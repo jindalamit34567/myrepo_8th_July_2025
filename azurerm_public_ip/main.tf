@@ -14,3 +14,9 @@ resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "West Europe"
 }
+
+# This is the Timpu resource group
+resource "azurerm_resource_group" "timpu-rg" {
+  name     = "timpu-resources"
+  location = "West Europe"
+}
