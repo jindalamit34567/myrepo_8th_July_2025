@@ -15,11 +15,7 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 
-# This is the rimpu resource group
-resource "azurerm_resource_group" "rimpu-rg" {
-  name     = "rimpu-resources"
-  location = "West Europe"
-}
+
 
 # This is the Timpu resource group
 resource "azurerm_resource_group" "timpu-rg" {
