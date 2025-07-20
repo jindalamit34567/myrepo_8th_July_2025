@@ -1,19 +1,13 @@
-variable "pubilc_ip_name" {
-  description = "The name of the public IP address."
-  type        = string
-}
-
-variable "location" {
-  description = "The Azure region where the public IP address will be created."
-  type        = string
-}
-variable "resource_group_name" {
-  description = "The name of the resource group where the public IP address will be created."
-  type        = string
-}
-
-variable "allocation_method" {
-  description = "The allocation method for the public IP address (Static or Dynamic)."
-  type        = string
-  default     = "Static"
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "4.36.0"
+    }
   }
+}
+
+provider "azurerm" {
+  features{}
+  subscription_id = "c69268aa-c88b-494c-aa80-775984104d2a"
+}
