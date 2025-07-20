@@ -1,30 +1,13 @@
-# This is our sub branch Code 
-# I am adding a comment to this file - 4th July--
-
-resource "azurerm_public_ip" "pip" {
-
-name = var.pubilc_ip_name
-location = var.location
-resource_group_name = var.resource_group_name
-allocation_method = var.allocation_method
-
-}
-
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+resource "azurerm_resource_group" "my-rg" {
+  name     = "jindal_rg"
   location = "West Europe"
 }
 
-# This is the rimpu resource group
-resource "azurerm_resource_group" "rimpu-rg" {
-  name     = "rimpu-resources"
-  location = "West Europe"
-}
+resource "azurerm_storage_account" "mystg" {
+  name                     = "tillustorage"
+  resource_group_name      = azurerm_resource_group.mystg.name
+  location                 = azurerm_resource_group.mystg.location
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
 
-# This is the Timpu resource group
-resource "azurerm_resource_group" "timpu-rg" {
-  name     = "timpu-resources"
-  location = "west Europe"
-  }
-
-
+} 
