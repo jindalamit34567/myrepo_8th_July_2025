@@ -3,6 +3,10 @@ resource "azurerm_resource_group" "my-rg" {
   location = "West Europe"
 }
 
+resource "azurerm_resource_group" "my-rg" {
+  name     = "canada_rg"
+  location = "Canada Central"
+}
 resource "azurerm_storage_account" "mystg" {
   name                     = "tillustorage"
   resource_group_name      = azurerm_resource_group.my-rg.name
